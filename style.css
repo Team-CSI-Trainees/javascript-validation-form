@@ -11,7 +11,7 @@
 
 }
 body{
-    background-image: var(--lg-lightcolor), url(https://th.bing.com/th/id/OIP.9w9UPmhppPIA_qWrSi6RLwHaEK?w=283&h=180&c=7&r=0&o=5&pid=1.7);
+    background-image: var(--lg-lightcolor), url(https://th.bing.com/th/id/R.a1db76ac5ec676ccda3e96c1418ebf94?rik=TE7IPkL64lyY4Q&riu=http%3a%2f%2fwonderfulengineering.com%2fwp-content%2fuploads%2f2014%2f01%2fbeautiful-wallpaper-27.jpg&ehk=r7taiF1HXT8FT%2fWL%2fJq2zeHHV3uADOQANKAjVGRrOQk%3d&risl=&pid=ImgRaw&r=0);
     background-size: 100%;
     background-repeat: no-repeat;
     font-family: var(--myfont);
@@ -30,5 +30,106 @@ body{
     overflow:hidden;
     width:calc(100vw-65vw);
     max-width:100%;
+    width: 550px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+   
+   
+}
+.header{
+    background:var(--lg-color);
+    padding: 30px 0;
 
 }
+.header h2{
+    color:#222;
+    font-family: var(--my-btn-font);
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+.form{
+    padding: 40px;
+}
+.form-control{
+    margin-bottom:20px;
+    position:relative;
+
+}
+.form-control label{
+    display:inline-block;
+    margin-bottom:5px;
+}
+.form-control input{
+    width: 100%;
+    border:2px solid #f0f0f0;
+    border-radius:5px;
+    display: block;
+    font-family: var(--myfont);
+    font-size: 14px;
+    padding:12px;
+
+}
+.form-control input:focus{
+    outline: 0;
+    border-color: #777;
+}
+.form-control.success input{
+    border-color: #2ecc71;
+}
+.form-control.error input{
+    border-color: #e74c3c;
+}
+.form-control i
+{
+position:absolute;
+right:12%;
+top: 38px;
+visibility: hidden;
+}
+.form-control i.fa-solid fa-circle-check {
+    color:#2ecc71;
+    visibility: visible;
+}
+.form-control i.fa-solid fa-circle-exclamation
+{
+    color: #e74c3c;
+    visibility: visible;
+}
+.form-control small{
+    color:#e74c3c;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+.form-control.error small{
+    visibility: visible;
+}
+.form .btn{
+    background:var(--lg-color);
+    border-radius: 6px;
+    border:none;
+    outline:none;
+    color:#fff;
+    display:block;
+    font-family: var(--my-btn-font);
+    font-size: 16px;
+    padding:15px 0;
+    margin-top:20px;
+    width:100%;
+    font-weight: bold;
+    text-transform:uppercase;
+    transition:all 1s ease;
+}
+.form .btn:hover{
+    background:linear-gradient(to right,#74ebd5,#9face6);
+}
+@media(max-width:998px){
+    .container{
+        width:calc(100vw-35vw);
+        max-width: 100%;
+    }
+}
+
