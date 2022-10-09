@@ -18,35 +18,35 @@
             <form class="form" id="form">
                 <div class="form-control">
                     <label >Username</label>
-                    <input type="text" name="" id="username" placeholder="Enter your fullname">
+                    <input type="text" name="" id="username" placeholder="Enter your fullname" autocomplete="off">
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
                 </div>
                 <div class="form-control">
                     <label >Email</label>
-                    <input type="email" name="" id="email" placeholder="Enter your email">
+                    <input type="email" name="" id="email" placeholder="Enter your email" autocomplete="off">
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
                 </div>
                 <div class="form-control">
                     <label >Phone Number</label>
-                    <input type="number" name="" id="phone" placeholder="Enter your Phone number">
+                    <input type="number" name="" id="phone" placeholder="Enter your Phone number" autocomplete="off">
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
                 </div>
                 <div class="form-control">
                     <label >Password</label>
-                    <input type="password" name="" id="password" placeholder="Enter your password">
+                    <input type="password" name="" id="password" placeholder="Enter your password" autocomplete="off">
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
                 </div>
                 <div class="form-control">
                     <label >Confirm Password</label>
-                    <input type="password" name="" id="cpassword" placeholder="Confirm Password">
+                    <input type="password" name="" id="cpassword" placeholder="Confirm Password" autocomplete="off">
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
@@ -55,5 +55,125 @@
                
             </form>
         </div>
+
+        <script type="text/javascript">
+         const form=document.getElementById('form');
+         const username=document.getElementById('username');
+         const email=document.getElementById('email');
+         const phone=document.getElementById('phone');
+         const password=document.getElementById('password');
+         const cpassword=document.getElementById('cpassword');
+
+         //add event
+         form.addEventListener('submit',(event) => {
+            event.preventDefault();
+            validate();
+
+         })//more email validate
+         const isEmail= (emailval) => {
+            var atSymbol=emailval.indexOf('@');
+            if(atSymbol<1)  return false;
+            var dot=emaival.lastIndexOf('.');
+            if(dot<=atSymbol+2) return false;
+            if(dot===emailval.lenght-1) return false;
+            return true;
+
+
+         }
+         //define the validate function
+         const validate = () =>{
+           
+         const usernameval=username.value.trim();
+         const emailval=email.value.trim();
+         const phoneval=phone.value.trim();
+         const passwordval=password.value.trim();
+         const cpasswordval=cpassword.value.trim();
+
+//validate username   
+
+         if(usernameval===""){
+            setErrormsg(username,'Username cannot be blank');
+            
+         }
+         else if(username.length<=2){
+            setErrormsg(username,'Username mininum 3 characters');
+
+         }
+         else{
+            setSuccessmsg(username);
+         }
+
+//validate email
+
+         if(emailval===""){
+            setErrormsg(email,'Email cannot be blank');
+            
+         }
+         else if(!(isEmail(emailval))){
+            setErrormsg(email,'Not a valid email');
+
+         }
+         else{
+            setSuccessmsg(email);
+         }
+
+
+            
+         
+//validate phone
+if(phoneval===""){
+            setErrormsg(phone,'Phone number cannot be blank');
+            
+         }
+         else if(phoneval.length!=10){
+            setErrormsg(phone,'Not a valid phone number');
+
+         }
+         else{
+            setSuccessmsg(phone);
+         }
+
+
+         //validate password
+         if(passwordval===""){
+            setErrormsg(password,'Password number cannot be blank');
+            
+         }
+         else if(passwordval.length<=8){
+            setErrormsg(password,'Minimum 8 characters required');
+
+         }
+         else{
+            setSuccessmsg(password);
+         }
+         //validate confirm password
+         if(cpasswordval===""){
+            setErrormsg(cpassword,' Confirm Password number cannot be blank');
+            
+         }
+         else if(passwordval!==cpasswordval){
+            setErrormsg(cpassword,'Does not match');
+
+         }
+         else{
+            setSuccessmsg(cpassword);
+         }
+
+        }
+        function setErrormsg(input,errormsgs){
+            const formControl=input.parentElement;
+            const small=formControl.querySelector('small');
+            formControl.className = "form-control error";
+            small.innerText = errormsgs;
+        }
+        function setSuccessmsg(input){
+            const formControl=input.parentElement;
+            formControl.className = "form-control success";
+
+        }
+
+        
+
+        </script>
     </body>
 </html>
