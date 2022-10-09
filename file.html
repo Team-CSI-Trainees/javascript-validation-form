@@ -37,6 +37,7 @@
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
                 </div>
+                
                 <div class="form-control">
                     <label >Password</label>
                     <input type="password" name="" id="password" placeholder="Enter your password" autocomplete="off">
@@ -55,7 +56,7 @@
                
             </form>
         </div>
-
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script type="text/javascript">
          const form=document.getElementById('form');
          const username=document.getElementById('username');
@@ -68,12 +69,43 @@
          form.addEventListener('submit',(event) => {
             event.preventDefault();
             validate();
+   
+         })
+         const sendData =(usernameval,sRate,count) =>{
+            if(sRate===count){
+                alert('Registration Successful!');
+                swal("Welcome! "+usernameval,"Registration Successfull","success");
+            }
+         }
+         const successmsg = (usernameval) => {
+            let formCon=document.getElementsByClassName('form-control');
+            var count=formCon.length-1;
+            for(var i=0; i< formCon.length;i++){
+                if(formCon[i].className ==="form-control success"){
+                    var sRate=0+i;
+                    console.log(sRate);
+                    sendData(usernameval,sRate,count);
 
-         })//more email validate
-         const isEmail= (emailval) => {
-            var atSymbol=emailval.indexOf('@');
+                }
+                else{
+                    return false;
+                }
+            }
+
+
+         }
+         
+         
+         
+         
+         
+         
+         
+         //more email validate
+         const isEmail = (emailval) => {
+            var atSymbol=emailval.indexOf("@");
             if(atSymbol<1)  return false;
-            var dot=emaival.lastIndexOf('.');
+            var dot=emailval.lastIndexOf('.');
             if(dot<=atSymbol+2) return false;
             if(dot===emailval.lenght-1) return false;
             return true;
@@ -109,8 +141,8 @@
             setErrormsg(email,'Email cannot be blank');
             
          }
-         else if(!(isEmail(emailval))){
-            setErrormsg(email,'Not a valid email');
+         else if(!isEmail(emailval)){
+            setErrormsg(emailval,'Not a valid email');
 
          }
          else{
@@ -158,6 +190,7 @@ if(phoneval===""){
          else{
             setSuccessmsg(cpassword);
          }
+         successmsg(usernameval);
 
         }
         function setErrormsg(input,errormsgs){
