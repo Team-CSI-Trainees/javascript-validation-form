@@ -23,6 +23,14 @@
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
                 </div>
+                
+                <div class="form-control">
+               
+                 <label>Date of Birth</label>
+                  <input type="date" name="" id="dob">
+                  <small>Error Msg</small>
+                  
+                </div>
                 <div class="form-control">
                     <label >Email</label>
                     <input type="email" name="" id="email" placeholder="Enter your email" autocomplete="off">
@@ -36,6 +44,15 @@
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
+                </div>
+                <div class="form-control">
+                  <label>Gender</label>
+                  <input type="radio" name="gender" value="male" id="gender">Male
+                  <input type="radio" name="gender" value="female" id="gender">Female
+                  <input type="radio" name="gender" value="others" id="gender">Others
+                  <small>Error Msg</small>
+               
+
                 </div>
                 
                 <div class="form-control">
@@ -64,6 +81,8 @@
          const phone=document.getElementById('phone');
          const password=document.getElementById('password');
          const cpassword=document.getElementById('cpassword');
+         const dob=document.getElementById("dob");
+         const gender=document.getElementById("gender");
 
          //add event
          form.addEventListener('submit',(event) => {
@@ -135,6 +154,9 @@
             setSuccessmsg(username);
          }
 
+        
+      
+
 //validate email
 
          if(emailval===""){
@@ -190,6 +212,24 @@ if(phoneval===""){
          else{
             setSuccessmsg(cpassword);
          }
+
+
+//validate gender
+if(gender.checked){
+setSuccessmsg(gender);}
+else{
+setErrormsg(gender,"Field is mandatory");}
+
+
+
+ //validate date of birth
+ if(!dob.value)
+       setErrormsg(dob,"Field is mandatory");
+         else{
+            setSuccessmsg(dob);
+         }  
+
+
          successmsg(usernameval);
 
         }
