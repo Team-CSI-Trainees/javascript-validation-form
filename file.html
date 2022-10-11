@@ -31,6 +31,31 @@
                   <small>Error Msg</small>
                   
                 </div>
+                 
+                <div>
+                  <label >Gender <br><br></label>
+                  <input type="radio" name="gender" id="male"> Male &nbsp;
+                  <input type="radio" name="gender" id="female"> Female &nbsp;
+                  <input type="radio" name="gender" id="others"> Others &nbsp;
+                  <br><br>
+                </div>
+                <div>
+                  <label>Course</label><br><br>
+                  <select name="course" id="course" placeholder="Select Course ">
+                     <option value="scourse">Select Course</option>
+                     <option value="cse">CSE</option>
+                     <option value="cseaiml">CSE AIML</option>
+                     <option value="cseds">CSE DS</option>
+                     <option value="csit">CSIT</option>
+                     <option value="it">IT</option>
+                     <option value="en">EN</option>
+                     <option value="mechanical">Mechanical</option>
+                     <option value="ece">ECE</option>
+                  </select><br><br>
+                </div>
+
+
+
                 <div class="form-control">
                     <label >Email</label>
                     <input type="email" name="" id="email" placeholder="Enter your email" autocomplete="off">
@@ -45,15 +70,7 @@
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
                 </div>
-                <div class="form-control">
-                  <label>Gender</label>
-                  <input type="radio" name="gender" value="male" id="gender">Male
-                  <input type="radio" name="gender" value="female" id="gender">Female
-                  <input type="radio" name="gender" value="others" id="gender">Others
-                  <small>Error Msg</small>
-               
-
-                </div>
+                
                 
                 <div class="form-control">
                     <label >Password</label>
@@ -82,8 +99,9 @@
          const password=document.getElementById('password');
          const cpassword=document.getElementById('cpassword');
          const dob=document.getElementById("dob");
-         const gender=document.getElementById("gender");
-
+         const course=document.getElementById('course');
+        
+        
          //add event
          form.addEventListener('submit',(event) => {
             event.preventDefault();
@@ -214,12 +232,6 @@ if(phoneval===""){
          }
 
 
-//validate gender
-if(gender.checked){
-setSuccessmsg(gender);}
-else{
-setErrormsg(gender,"Field is mandatory");}
-
 
 
  //validate date of birth
@@ -229,6 +241,7 @@ setErrormsg(gender,"Field is mandatory");}
             setSuccessmsg(dob);
          }  
 
+       
 
          successmsg(usernameval);
 

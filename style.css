@@ -125,6 +125,8 @@ visibility: hidden;
     text-transform:uppercase;
     transition:all 1s ease;
 }
+
+
 .form .btn:hover{
     background:linear-gradient(to right,#74ebd5,#9face6);
 }
