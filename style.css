@@ -13,7 +13,7 @@
 }
 body{
     background-image: var(--lg-lightcolor), url(https://th.bing.com/th/id/R.a1db76ac5ec676ccda3e96c1418ebf94?rik=TE7IPkL64lyY4Q&riu=http%3a%2f%2fwonderfulengineering.com%2fwp-content%2fuploads%2f2014%2f01%2fbeautiful-wallpaper-27.jpg&ehk=r7taiF1HXT8FT%2fWL%2fJq2zeHHV3uADOQANKAjVGRrOQk%3d&risl=&pid=ImgRaw&r=0);
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     font-family: var(--myfont);
     display:flex;

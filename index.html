@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-control">
                     <label >Phone Number</label>
-                    <input type="number" name="" id="phone" placeholder="Enter your Phone number" autocomplete="off">
+                    <input type="number"  name="" id="phone" placeholder="Enter your Phone number" autocomplete="off">
                     <i class="fa-solid fa-circle-check"></i>
                     <i class="fa-solid fa-circle-exclamation"></i>
                     <small>Error Msg</small>
@@ -102,7 +102,7 @@
          const course=document.getElementById('course');
         
         
-         //add event
+      
          form.addEventListener('submit',(event) => {
             event.preventDefault();
             validate();
@@ -111,7 +111,7 @@
          const sendData =(usernameval,sRate,count) =>{
             if(sRate===count){
                 alert('Registration Successful!');
-                swal("Welcome! "+usernameval,"Registration Successfull","success");
+                swal("Thank You! "+usernameval,"Registration Successfull","success");
             }
          }
          const successmsg = (usernameval) => {
@@ -138,7 +138,7 @@
          
          
          
-         //more email validate
+         
          const isEmail = (emailval) => {
             var atSymbol=emailval.indexOf("@");
             if(atSymbol<1)  return false;
@@ -149,7 +149,7 @@
 
 
          }
-         //define the validate function
+         
          const validate = () =>{
            
          const usernameval=username.value.trim();
